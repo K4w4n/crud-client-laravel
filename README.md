@@ -2,4 +2,4 @@
 
 Aqui é possivel cadastrar, deletar, modificar e vizualizar uma lista de clientes.
 
-(Mais informações em preve)
+(Mais informações em breve)
