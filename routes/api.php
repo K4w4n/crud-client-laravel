@@ -18,13 +18,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/select', 'App\Http\controllers\ClienteController@SelectCustomer');
+Route::get('/select', 'App\Http\controllers\ClienteController@selectCustomer');
 
-Route::post('/create', 'App\Http\controllers\ClienteController@CreateCustomer');
+Route::get('/find', 'App\Http\controllers\ClienteController@find');
 
-Route::put('/update', 'App\Http\controllers\ClienteController@UpdateCustomer');
+Route::post('/create', 'App\Http\controllers\ClienteController@createCustomer');
 
-Route::delete('/delete', 'App\Http\controllers\ClienteController@DeleteCustomer');
+Route::post('/update', 'App\Http\controllers\ClienteController@updateCustomer');
+
+Route::delete('/delete', 'App\Http\controllers\ClienteController@deleteCustomer');
 
 Route::fallback(function ()
 {

@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <form action="" method="post" class="formulario">
+    <form action="" method="post" class="formulario container-fluid">
         <h1 class="text-center">Inserir novo cliente</h1>
 
         <div class="mb-3">

@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="container-fluid">
+<body>
     @if (!@$notMenu)
         @component('_componentes.menu', ['pageNumber'=>$pageNumber ?? 0])
         @endcomponent

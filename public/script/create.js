@@ -22,7 +22,13 @@ elSubmit.addEventListener('click', (e) => {
         method: 'post',
         data: { nome, telefone, email },
         success: response => {
-            console.log(response);
+            if (response.status == 'success') {
+                alert('Cliente registrado');
+                window.location.assign('/')
+
+            } else if (response.status == 'failed') {
+                alert(response.message)
+            }
         }
     });
 });

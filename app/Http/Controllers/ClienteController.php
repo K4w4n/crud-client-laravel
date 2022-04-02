@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
-use GuzzleHttp\Client;
 
 class ClienteController extends Controller
 {
 
-    public function CreateCustomer()
+    public function createCustomer()
     {
         //Validando dados
         if (
@@ -32,10 +31,10 @@ class ClienteController extends Controller
         ];
     }
 
-    public function UpdateCustomer()
+    public function updateCustomer()
     {
-        //Verificando se id existe
         if (@$_REQUEST['id']) {
+            //Verificando se id existe
 
             //Formatando dados
             $dados = [];
@@ -71,7 +70,7 @@ class ClienteController extends Controller
         ];
     }
 
-    public function SelectCustomer()
+    public function selectCustomer()
     {
         return [
             'status' => 'success',
@@ -98,6 +97,26 @@ class ClienteController extends Controller
             ];
         }
 
+        return [
+            'status' => 'failed',
+            'message' => 'Alguns dados podem estar faltando'
+        ];
+    }
+    public function find()
+    {
+        if (is_numeric(@$_GET['id'])) {
+            $cliente = Cliente::find($_GET['id'], ['id', 'nome', 'telefone', 'email']);
+            if ($cliente) {
+                return [
+                    'status' => 'success',
+                    'data' => $cliente
+                ];
+            }
+            return [
+                'status' => 'failed',
+                'message' => 'Cliente não cadastrado'
+            ];
+        }
         return [
             'status' => 'failed',
             'message' => 'Alguns dados podem estar faltando'
