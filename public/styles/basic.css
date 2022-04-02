@@ -1,0 +1,16 @@
+html,
+body,
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.formulario, .clients-list {
+    max-width: 45em;
+    margin: 1em auto;
+    box-shadow: 0 0 0 0;
+}
+
+.submit {
+    width: 100%;
+}
